@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Usługi informatyczne oferowane przez EMTEK S.C. – kompleksowe rozwiązania dla firm." />
-  <title>Usługi – EMTEK S.C.</title>
+  <title>Usługi – EMTEK s.c.</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
 </head>
 <body>
   <header>
@@ -14,15 +15,16 @@
       <a href="index.html"><img src="images/logo.png" alt="EMTEK logo" class="logo" /></a>
       <nav>
         <ul class="nav-links">
-          <li><a href="/strona-glowna">Strona Główna</a></li>
-          <li><a href="/systemy">Systemy</a></li>
-          <li><a href="/wsparcie">Wsparcie</a></li>
-          <li><a href="/uslugi" class="active-page">Usługi</a></li>
-          <li><a href="/o-nas">O nas</a></li>
-          <li><a href="/partnerzy">Partnerzy</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="systemy.html">Systemy</a></li>
+          <li><a href="wsparcie.html">Wsparcie</a></li>
+          <li><a href="uslugi.html" class="active-page">Usługi</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="partnerzy.html">Partnerzy</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
         <button class="menu-toggle" aria-label="Toggle menu">
+          < Prefecha href="images/EMTEK-favicon.png" rel="icon">
           <span></span>
           <span></span>
           <span></span>
@@ -34,7 +36,7 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Usługi</h1>
+        <h1>📋 Usługi</h1>
         <p>Kompleksowe usługi informatyczne dostosowane do potrzeb Twojej firmy.</p>
       </div>
     </section>
@@ -42,16 +44,16 @@
     <section class="services">
       <div class="container">
         <ul class="service-list">
-          <li><strong>Wdrożenia oprogramowania</strong> – analiza potrzeb, dobór, instalacja i konfiguracja, uruchomienie oraz wsparcie, również na miejscu.</li>
-          <li><strong>Serwis oprogramowania</strong> – również wdrożonego przez inne podmioty.</li>
-          <li><strong>Dobór, sprzedaż i serwis sprzętu komputerowego</strong> – również poleasingowego.</li>
-          <li><strong>Instalacja i konfiguracja sieci</strong> – w tym konfiguracja dostępu zdalnego poprzez bezpieczne tunele VPN do pracy zdalnej.</li>
-          <li><strong>Administracja systemami</strong> – Windows (Serwer i Desktop) oraz Linux.</li>
-          <li><strong>Administracja bazami danych</strong> – PostgreSQL, MS SQL, MySQL.</li>
-          <li><strong>Archiwizacja i Backup danych</strong> – tworzenie odpowiednich polityk, w zależności od potrzeb Klienta.</li>
-          <li><strong>Serwis pogwarancyjny drukarek i dostawa materiałów eksploatacyjnych</strong> – dzięki współpracy z zewnętrznym partnerem.</li>
-          <li><strong>Administracja, projektowanie i aktualizacja stron www</strong> – przy pomocy partnerów zewnętrznych.</li>
-          <li><strong>Projekty poligraficzne</strong> – reklama prasowa, reklama wielkoformatowa, projekty, logotypy, ulotki, wizytówki, kalendarze i inne – współpracując z partnerami zewnętrznymi.</li>
+          <li>🔄 <strong>Wdrożenia oprogramowania</strong> – analiza potrzeb, dobór, instalacja i konfiguracja, uruchomienie oraz wsparcie, również na miejscu.</li>
+          <li>🔧 <strong>Serwis oprogramowania</strong> – również wdrożonego przez inne podmioty.</li>
+          <li>💻 <strong>Dobór, sprzedaż i serwis sprzętu komputerowego</strong> – również poleasingowego.</li>
+          <li>🌐 <strong>Instalacja i konfiguracja sieci</strong> – w tym konfiguracja dostępu zdalnego poprzez bezpieczne tunele VPN do pracy zdalnej.</li>
+          <li>🖥️ <strong>Administracja systemami</strong> – Windows (Serwer i Desktop) oraz Linux.</li>
+          <li>🗃️ <strong>Administracja bazami danych</strong> – PostgreSQL, MS SQL, MySQL.</li>
+          <li>💾 <strong>Archiwizacja i Backup danych</strong> – tworzenie odpowiednich polityk, w zależności od potrzeb Klienta.</li>
+          <li>🖨️ <strong>Serwis pogwarancyjny drukarek i dostawa materiałów eksploatacyjnych</strong> – dzięki współpracy z zewnętrznym partnerem.</li>
+          <li>🖱️ <strong>Administracja, projektowanie i aktualizacja stron www</strong> – przy pomocy partnerów zewnętrznych.</li>
+          <li>🎨 <strong>Projekty poligraficzne</strong> – reklama prasowa, reklama wielkoformatowa, projekty, logotypy, ulotki, wizytówki, kalendarze i inne – współpracując z partnerami zewnętrznymi.</li>
         </ul>
       </div>
     </section>
@@ -59,17 +61,62 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 EMTEK S.C. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
+
   <script>
+    // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+
+    // Obsługa banera cookies
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+
+      if (!cookieBanner || !acceptBtn) {
+        console.warn('Brak elementów cookie-banner lub accept-cookies');
+        return;
+      }
+
+      const isCookiesAccepted = () => {
+        try {
+          return localStorage.getItem('cookies-accepted') === 'true';
+        } catch (e) {
+          console.warn('Błąd dostępu do localStorage:', e);
+          return false;
+        }
+      };
+
+      if (!isCookiesAccepted()) {
+        cookieBanner.style.display = 'flex';
+        console.log('Baner cookies wyświetlony');
+      } else {
+        console.log('Baner cookies ukryty - cookies już zaakceptowane');
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        try {
+          cookieBanner.style.display = 'none';
+          localStorage.setItem('cookies-accepted', 'true');
+          console.log('Cookies zaakceptowane i zapisane w localStorage');
+        } catch (e) {
+          console.warn('Błąd zapisu do localStorage:', e);
+        }
+      });
     });
   </script>
 </body>

@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Informacje o firmie EMTEK S.C. – kompleksowa obsługa informatyczna dla firm i klientów indywidualnych." />
-  <title>O nas – EMTEK S.C.</title>
+  <meta name="description" content="O nas – poznaj EMTEK S.C., specjalistów w dziedzinie usług i systemów informatycznych." />
+  <title>O nas – EMTEK s.c.</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
 </head>
 <body>
   <header>
@@ -14,13 +15,13 @@
       <a href="index.html"><img src="images/logo.png" alt="EMTEK logo" class="logo" /></a>
       <nav>
         <ul class="nav-links">
-          <li><a href="/strona-glowna">Strona Główna</a></li>
-          <li><a href="/systemy">Systemy</a></li>
-          <li><a href="/wsparcie">Wsparcie</a></li>
-          <li><a href="/uslugi">Usługi</a></li>
-          <li><a href="/o-nas" class="active-page">O nas</a></li>
-          <li><a href="/partnerzy">Partnerzy</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="systemy.html">Systemy</a></li>
+          <li><a href="wsparcie.html">Wsparcie</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="o-nas.html" class="active-page">O nas</a></li>
+          <li><a href="partnerzy.html">Partnerzy</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
         <button class="menu-toggle" aria-label="Toggle menu">
           <span></span>
@@ -34,41 +35,78 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>O nas</h1>
-        <p>Poznaj naszą firmę i dowiedz się, jak możemy wspierać Twoją działalność.</p>
+        <h1>👥 O nas</h1>
+        <p>Poznaj naszą firmę i wartości, które nami kierują.</p>
       </div>
     </section>
 
     <section class="about">
       <div class="container">
-        <p>Jesteśmy firmą specjalizującą się w kompleksowej obsłudze firm oraz klientów indywidualnych w zakresie technologii informatycznych. Oferowane przez nas usługi to zarówno proste prace serwis were, jak również dostawa, wdrożenie i administracja kompleksowych rozwiązań łączących wszystkie aspekty informatyczne, niezbędne do poprawnego i niezawodnego funkcjonowania przedsiębiorstwa.</p>
-
-        <p>Działając w sektorze małych i średnich przedsiębiorstw, staramy się w oparciu o posiadaną wiedzę, doświadczenie oraz rzetelność i uczciwość budować długofalowe, partnerskie relacje biznesowe z naszymi klientami, oferując innowacyjne rozwiązania i usługi informatyczne.</p>
-
-        <p>Posiadamy szerokie doświadczenie w administrowaniu i serwisowaniu systemów do prowadzenia sprzedaży w marketach, prowadzimy kompleksową obsługę informatyczną w firmach o różnych profilach działalności gospodarczej.</p>
-
-        <p>Posiadamy tytuł Autoryzowanego Dealera firmy INSOFT sp. z o.o., co umożliwia nam sprzedaż, wdrożenia oraz serwis programów z serii PC-Market 7.
-
-        <p>Będąc Partnerem Comarch zajmujemy się dystrybucją, wdrożeniami oraz opieką powdrożeniową systemów Comarch Opt!ma oraz Comarch Klasyka.</p>
-
-        <p>Zapraszamy do współpracy.</p>
+        <p>EMTEK s.c. to dynamicznie rozwijająca się firma informatyczna z siedzibą w Krakowie, założona przez Marcina Bernady i Tomasza Data. Od lat dostarczamy kompleksowe rozwiązania IT dla małych i średnich przedsiębiorstw, specjalizując się w systemach dla handlu, gastronomii i stacji paliw.</p>
+        <p>Nasza misja to wspieranie klientów w efektywnym wykorzystaniu technologii poprzez indywidualne podejście, nowoczesne narzędzia i niezawodne wsparcie. Współpracujemy z renomowanymi partnerami, takimi jak INSOFT i Comarch, aby dostarczać rozwiązania najwyższej jakości.</p>
+        <p>Dzięki wieloletniemu doświadczeniu i pasji do technologii pomagamy firmom optymalizować procesy biznesowe, zwiększać efektywność i osiągać sukcesy na konkurencyjnym rynku.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 EMTEK S.C. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
+
   <script>
+    // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+
+    // Obsługa banera cookies
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+
+      if (!cookieBanner || !acceptBtn) {
+        console.warn('Brak elementów cookie-banner lub accept-cookies');
+        return;
+      }
+
+      const isCookiesAccepted = () => {
+        try {
+          return localStorage.getItem('cookies-accepted') === 'true';
+        } catch (e) {
+          console.warn('Błąd dostępu do localStorage:', e);
+          return false;
+        }
+      };
+
+      if (!isCookiesAccepted()) {
+        cookieBanner.style.display = 'flex';
+        console.log('Baner cookies wyświetlony');
+      } else {
+        console.log('Baner cookies ukryty - cookies już zaakceptowane');
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        try {
+          cookieBanner.style.display = 'none';
+          localStorage.setItem('cookies-accepted', 'true');
+          console.log('Cookies zaakceptowane i zapisane w localStorage');
+        } catch (e) {
+          console.warn('Błąd zapisu do localStorage:', e);
+        }
+      });
     });
   </script>
 </body>

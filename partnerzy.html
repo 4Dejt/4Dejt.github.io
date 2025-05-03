@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Partnerzy EMTEK S.C. – firmy, z którymi współpracujemy, dostarczając kompleksowe usługi informatyczne." />
-  <title>Partnerzy – EMTEK S.C.</title>
+  <meta name="description" content="Partnerzy EMTEK S.C. – poznaj firmy, z którymi współpracujemy." />
+  <title>Partnerzy – EMTEK s.c.</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
 </head>
 <body>
   <header>
@@ -14,19 +15,19 @@
       <a href="index.html"><img src="images/logo.png" alt="EMTEK logo" class="logo" /></a>
       <nav>
         <ul class="nav-links">
-          <li><a href="/strona-glowna">Strona Główna</a></li>
-          <li><a href="/systemy">Systemy</a></li>
-          <li><a href="/wsparcie">Wsparcie</a></li>
-          <li><a href="/uslugi">Usługi</a></li>
-          <li><a href="/o-nas">O nas</a></li>
-          <li><a href="/partnerzy" class="active-page">Partnerzy</a></li>
-          <li><a href="/kontakt">Kontakt</a></li>
+          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="systemy.html">Systemy</a></li>
+          <li><a href="wsparcie.html">Wsparcie</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="partnerzy.html" class="active-page">Partnerzy</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
         <button class="menu-toggle" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -34,25 +35,19 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Partnerzy</h1>
-        <p>Współpracujemy z wiodącymi firmami w branży, aby dostarczać najlepsze rozwiązania informatyczne.</p>
+        <h1>🤝 Partnerzy</h1>
+        <p>Współpracujemy z najlepszymi, aby dostarczać niezawodne rozwiązania.</p>
       </div>
     </section>
 
     <section class="partners">
       <div class="container">
-        <h2>Nasi partnerzy</h2>
         <div class="partner-grid">
-          <img src="images/microsoft.png" alt="Partner 1" />
-          <img src="images/dell.png" alt="Partner 2" />
-          <img src="images/draytek.png" alt="Partner 3" />
-          <img src="images/digi.png" alt="Partner 4" />
-          <img src="images/yakudo.png" alt="Partner 5" />
-          <img src="images/comarch.png" alt="Partner 6" />
-          <img src="images/pc-market.png" alt="Partner 7" />
-          <img src="images/eset.png" alt="Partner 8" />
-          <img src="images/hp.png" alt="Partner 9" />
-          <img src="images/Lenovo.png" alt="Partner 10" />
+          <a href="https://www.insoft.com.pl/" target="_blank"><img src="images/INSOFT-logo.png" alt="INSOFT"></a>
+          <a href="https://www.comarch.pl/erp/comarch-optima/" target="_blank"><img src="images/Comarch ERP Optima.png" alt="Comarch ERP Optima"></a>
+          <a href="https://www.microsoft.com/" target="_blank"><img src="images/Microsoft-logo.png" alt="Microsoft"></a>
+          <a href="https://www.dell.com/" target="_blank"><img src="images/Dell-logo.png" alt="Dell"></a>
+          <a href="https://www.hp.com/" target="_blank"><img src="images/HP-logo.png" alt="HP"></a>
         </div>
       </div>
     </section>
@@ -60,17 +55,62 @@
 
   <footer>
     <div class="container">
-      <p>© 2025 EMTEK S.C. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
 
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
+
   <script>
+    // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+
+    // Obsługa banera cookies
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+
+      if (!cookieBanner || !acceptBtn) {
+        console.warn('Brak elementów cookie-banner lub accept-cookies');
+        return;
+      }
+
+      const isCookiesAccepted = () => {
+        try {
+          return localStorage.getItem('cookies-accepted') === 'true';
+        } catch (e) {
+          console.warn('Błąd dostępu do localStorage:', e);
+          return false;
+        }
+      };
+
+      if (!isCookiesAccepted()) {
+        cookieBanner.style.display = 'flex';
+        console.log('Baner cookies wyświetlony');
+      } else {
+        console.log('Baner cookies ukryty - cookies już zaakceptowane');
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        try {
+          cookieBanner.style.display = 'none';
+          localStorage.setItem('cookies-accepted', 'true');
+          console.log('Cookies zaakceptowane i zapisane w localStorage');
+        } catch (e) {
+          console.warn('Błąd zapisu do localStorage:', e);
+        }
+      });
     });
   </script>
 </body>

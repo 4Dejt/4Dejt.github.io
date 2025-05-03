@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Systemy informatyczne oferowane przez EMTEK S.C. – kompleksowe rozwiązania dla firm." />
-  <title>Systemy – EMTEK S.C.</title>
+  <title>Systemy – EMTEK s.c.</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
 </head>
 <body>
   <!-- Modal do powiększonych zdjęć -->
   <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
+    <span class="close">×</span>
     <img class="modal-content" id="modalImage">
     <div id="caption"></div>
   </div>
@@ -41,7 +42,7 @@
   <main>
     <section class="page-header">
       <div class="container">
-        <h1>Systemy</h1>
+        <h1>💾 Systemy</h1>
         <p>Oferujemy kompleksowe systemy informatyczne dostosowane do potrzeb Twojej firmy.</p>
       </div>
     </section>
@@ -123,19 +124,26 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 EMTEK S.C. Wszelkie prawa zastrzeżone.</p>
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
 
   <script>
     // Menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
 
     // Modal do powiększania zdjęć
     const modal = document.getElementById("imageModal");
@@ -144,29 +152,67 @@
     const closeBtn = document.getElementsByClassName("close")[0];
     const systemImages = document.querySelectorAll('.system-img');
 
-    systemImages.forEach(img => {
-      img.addEventListener('click', function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
+    if (modal && modalImg && captionText && closeBtn && systemImages) {
+      systemImages.forEach(img => {
+        img.addEventListener('click', function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          captionText.innerHTML = this.alt;
+        });
       });
-    });
 
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = "none";
-    });
-
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
+      closeBtn.addEventListener('click', function() {
         modal.style.display = "none";
-      }
-    });
+      });
 
-    // Zamknij modal klawiszem ESC
-    document.addEventListener('keydown', function(e) {
-      if (e.key === "Escape" && modal.style.display === "block") {
-        modal.style.display = "none";
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape" && modal.style.display === "block") {
+          modal.style.display = "none";
+        }
+      });
+    }
+
+    // Obsługa banera cookies
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+
+      if (!cookieBanner || !acceptBtn) {
+        console.warn('Brak elementów cookie-banner lub accept-cookies');
+        return;
       }
+
+      const isCookiesAccepted = () => {
+        try {
+          return localStorage.getItem('cookies-accepted') === 'true';
+        } catch (e) {
+          console.warn('Błąd dostępu do localStorage:', e);
+          return false;
+        }
+      };
+
+      if (!isCookiesAccepted()) {
+        cookieBanner.style.display = 'flex';
+        console.log('Baner cookies wyświetlony');
+      } else {
+        console.log('Baner cookies ukryty - cookies już zaakceptowane');
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        try {
+          cookieBanner.style.display = 'none';
+          localStorage.setItem('cookies-accepted', 'true');
+          console.log('Cookies zaakceptowane i zapisane w localStorage');
+        } catch (e) {
+          console.warn('Błąd zapisu do localStorage:', e);
+        }
+      });
     });
   </script>
 </body>
