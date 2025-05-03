@@ -44,31 +44,30 @@
     <section class="services">
       <div class="container">
         <ul class="service-list">
-          <li>🔄 <strong>Wdrożenia oprogramowania</strong> – analiza potrzeb, dobór, instalacja i konfiguracja, uruchomienie oraz wsparcie, również na miejscu.</li>
+          <li><strong>Wdrożenia oprogramowania</strong> – analiza potrzeb, dobór, instalacja i konfiguracja, uruchomienie oraz wsparcie, również na miejscu.</li>
           <li>🔧 <strong>Serwis oprogramowania</strong> – również wdrożonego przez inne podmioty.</li>
-          <li>💻 <strong>Dobór, sprzedaż i serwis sprzętu komputerowego</strong> – również poleasingowego.</li>
-          <li>🌐 <strong>Instalacja i konfiguracja sieci</strong> – w tym konfiguracja dostępu zdalnego poprzez bezpieczne tunele VPN do pracy zdalnej.</li>
-          <li>🖥️ <strong>Administracja systemami</strong> – Windows (Serwer i Desktop) oraz Linux.</li>
-          <li>🗃️ <strong>Administracja bazami danych</strong> – PostgreSQL, MS SQL, MySQL.</li>
-          <li>💾 <strong>Archiwizacja i Backup danych</strong> – tworzenie odpowiednich polityk, w zależności od potrzeb Klienta.</li>
-          <li>🖨️ <strong>Serwis pogwarancyjny drukarek i dostawa materiałów eksploatacyjnych</strong> – dzięki współpracy z zewnętrznym partnerem.</li>
-          <li>🖱️ <strong>Administracja, projektowanie i aktualizacja stron www</strong> – przy pomocy partnerów zewnętrznych.</li>
-          <li>🎨 <strong>Projekty poligraficzne</strong> – reklama prasowa, reklama wielkoformatowa, projekty, logotypy, ulotki, wizytówki, kalendarze i inne – współpracując z partnerami zewnętrznymi.</li>
+          <li><strong>Dobór, sprzedaż i serwis sprzętu komputerowego</strong> – również poleasingowego.</li>
+          <li><strong>Instalacja i konfiguracja sieci</strong> – w tym konfiguracja dostępu zdalnego poprzez bezpieczne tunele VPN do pracy zdalnej.</li>
+          <li><strong>Administracja systemami</strong> – Windows (Serwer i Desktop) oraz Linux.</li>
+          <li><strong>Administracja bazami danych</strong> – PostgreSQL, MS SQL, MySQL.</li>
+          <li><strong>Archiwizacja i Backup danych</strong> – tworzenie odpowiednich polityk, w zależności od potrzeb Klienta.</li>
+          <li><strong>Serwis pogwarancyjny drukarek i dostawa materiałów eksploatacyjnych</strong> – dzięki współpracy z zewnętrznym partnerem.</li>
+          
         </ul>
       </div>
     </section>
   </main>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
 
   <footer>
     <div class="container">
       <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>
-
-  <div id="cookie-banner" class="cookie-banner">
-    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
-    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
-  </div>
 
   <script>
     // Menu toggle
@@ -81,6 +80,12 @@
         menuToggle.classList.toggle('active');
       });
     }
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
+    });
 
     // Obsługa banera cookies
     document.addEventListener('DOMContentLoaded', () => {

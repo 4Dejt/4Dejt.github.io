@@ -1062,3 +1062,152 @@ footer {
     font-size: 10px;
   }
 }
+
+/* Dodaj te style do istniejącego pliku style.css */
+
+/* Poprawka dla body - upewnij się, że stopka jest na dole */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Główna zawartość - zajmuje całą dostępną przestrzeń */
+main {
+  flex: 1;
+  padding-bottom: 60px; /* miejsce na baner cookies */
+}
+
+/* Stopka - zawsze na dole */
+footer {
+  background-color: var(--main-color);
+  color: var(--white-addition);
+  text-align: center;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 100;
+}
+
+/* Baner cookies - powyżej stopki */
+.cookie-banner {
+  position: fixed;
+  bottom: 60px; /* powyżej stopki */
+  left: 0;
+  right: 0;
+  background: var(--main-color);
+  color: white;
+  padding: 8px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+/* Responsywność menu */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    background: var(--main-color);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Poprawki dla sekcji systemów na małych ekranach */
+@media (max-width: 992px) {
+  .systems-content {
+    flex-direction: column;
+  }
+  
+  .partner-logo {
+    width: 120px;
+    margin: 0 auto 2rem;
+  }
+  
+  .system-card {
+    flex-direction: column;
+  }
+  
+  .system-img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Poprawki dla sekcji kontaktowej */
+@media (max-width: 768px) {
+  .contact .container {
+    flex-direction: column;
+  }
+  
+  .contact-map iframe {
+    height: 300px;
+  }
+}
+
+/* Poprawki dla sekcji partnerów */
+@media (max-width: 768px) {
+  .partner-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Poprawki dla nagłówków stron */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1.5rem 0;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Poprawki dla sekcji usług */
+@media (max-width: 768px) {
+  .service-list li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Poprawki dla hero sekcji */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 0;
+    height: auto;
+    min-height: 80vh;
+  }
+  
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
