@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EMTEK s.c. – kompleksowe usługi i systemy informatyczne dla firm." />
+  <title>EMTEK s.c. – Usługi i systemy informatyczne</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html"><img src="images/logo.png" alt="EMTEK logo" class="logo" /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active-page">Strona Główna</a></li>
+          <li><a href="systemy.html">Systemy</a></li>
+          <li><a href="wsparcie.html">Wsparcie</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="partnerzy.html">Partnerzy</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Kompleksowe usługi i systemy informatyczne</h1>
+        <p>Dostarczamy nowoczesne rozwiązania IT dostosowane do Twoich potrzeb biznesowych.</p>
+        <a href="kontakt.html" class="btn-primary">Skontaktuj się z nami</a>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <h2>🔧 Nasze Usługi</h2>
+        <div class="service-cards">
+          <div class="card">
+            <h3>Systemy dla biznesu</h3>
+            <p>Specjalistyczne oprogramowanie dla marketów, gastronomii i stacji paliw.</p>
+          </div>
+          <div class="card">
+            <h3>Wsparcie IT</h3>
+            <p>Stała opieka serwisowa oraz doraźna pomoc informatyczna.</p>
+          </div>
+          <div class="card">
+            <h3>Serwis sprzętu</h3>
+            <p>Sprzedaż, konfiguracja i naprawa sprzętu komputerowego.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="container">
+        <h2>🤝 Nasze Podejście</h2>
+        <div class="approach-items">
+          <div class="item">
+            <h3>Indywidualne podejście</h3>
+            <p>Dopasowujemy rozwiązania do specyficznych potrzeb Twojej firmy.</p>
+          </div>
+          <div class="item">
+            <h3>Nowoczesne technologie</h3>
+            <p>Wykorzystujemy sprawdzone i innowacyjne narzędzia IT.</p>
+          </div>
+          <div class="item">
+            <h3>Wsparcie na każdym etapie</h3>
+            <p>Od analizy po wdrożenie i bieżącą obsługę.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Gotowy na lepsze rozwiązania IT?</h2>
+        <a href="kontakt.html" class="btn-secondary">Zacznij współpracę</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
+    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+      }
+    });
+    // Menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+      });
+    }
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+      document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
+    });
+
+    // Obsługa banera cookies
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieBanner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+
+      if (!cookieBanner || !acceptBtn) {
+        console.warn('Brak elementów cookie-banner lub accept-cookies');
+        return;
+      }
+
+      const isCookiesAccepted = () => {
+        try {
+          return localStorage.getItem('cookies-accepted') === 'true';
+        } catch (e) {
+          console.warn('Błąd dostępu do localStorage:', e);
+          return false;
+        }
+      };
+
+      if (!isCookiesAccepted()) {
+        cookieBanner.style.display = 'flex';
+        console.log('Baner cookies wyświetlony');
+      } else {
+        console.log('Baner cookies ukryty - cookies już zaakceptowane');
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        try {
+          cookieBanner.style.display = 'none';
+          localStorage.setItem('cookies-accepted', 'true');
+          console.log('Cookies zaakceptowane i zapisane w localStorage');
+        } catch (e) {
+          console.warn('Błąd zapisu do localStorage:', e);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
