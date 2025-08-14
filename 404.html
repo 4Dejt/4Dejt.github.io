@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
+    <title>404 Nie znaleziono | Emtek s.c. - Usługi Informatyczne</title>
+    <style>
+        :root {
+            --main-color: #2f3a4f;
+            --second-color: #f4f4f4;
+            --accent-color: #d94b47;
+            --white-addition: #fff;
+            --black-addition: #333;
+            --gray-addition: #666;
+            --dark-red: #b72925;
+        }
+        
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--main-color);
+            color: var(--white-addition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .binary-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0.03;
+            z-index: 0;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            white-space: pre;
+            overflow: hidden;
+            pointer-events: none;
+            word-break: break-all;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-link {
+            display: block;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .error-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .number {
+            font-size: 100px;
+            font-weight: 800;
+            color: var(--accent-color);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            line-height: 1;
+        }
+        
+        .icon {
+            font-size: 50px;
+            margin: 0 15px;
+            color: var(--white-addition);
+            opacity: 0.7;
+        }
+        
+        h2 {
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--white-addition);
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        p {
+            max-width: 500px;
+            line-height: 1.5;
+            font-size: 16px;
+            color: var(--second-color);
+            margin: 10px 0 20px;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent-color);
+            color: var(--white-addition);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(217, 75, 71, 0.3);
+            margin: 10px 0;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(217, 75, 71, 0.4);
+        }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+            opacity: 0.7;
+            width: 100%;
+            max-width: 400px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-icon {
+            font-size: 24px;
+            color: var(--white-addition);
+            transition: transform 0.3s;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .logo {
+                height: 50px;
+            }
+            
+            .number {
+                font-size: 80px;
+            }
+            
+            .icon {
+                font-size: 40px;
+                margin: 0 10px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+            
+            .btn {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+            
+            .tech-icons {
+                gap: 12px;
+            }
+            
+            .tech-icon {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                height: 40px;
+            }
+            
+            .number {
+                font-size: 60px;
+            }
+            
+            .icon {
+                font-size: 30px;
+                margin: 0 8px;
+            }
+            
+            h2 {
+                font-size: 18px;
+            }
+            
+            p {
+                font-size: 13px;
+            }
+            
+            .tech-icon {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="binary-bg" id="binaryBackground"></div>
+    
+    <div class="content">
+        <a href="https://4dejt.github.io" class="logo-link">
+            <img src="images/logo.png" alt="Emtek s.c." class="logo">
+        </a>
+        
+        <div class="error-code">
+            <div class="number">4</div>
+            <div class="icon">🖥️</div>
+            <div class="number">4</div>
+        </div>
+        
+        <h2>Strona nie została znaleziona</h2>
+        
+        <p>Wygląda na to, że strona której szukasz uległa błędowi lub została przeniesiona. Jako specjaliści IT, już pracujemy nad rozwiązaniem problemu!</p>
+        
+        <a href="https://4dejt.github.io" class="btn">Powrót do strony głównej</a>
+        
+        <div class="tech-icons">
+            <div class="tech-icon">💻</div>
+            <div class="tech-icon">🔌</div>
+            <div class="tech-icon">📱</div>
+            <div class="tech-icon">🌐</div>
+            <div class="tech-icon">🔒</div>
+        </div>
+    </div>
+
+    <script>
+        // Dynamiczne tło z kodem binarnym wypełniające CAŁY ekran
+        const binaryChars = "01";
+        const bgElement = document.getElementById('binaryBackground');
+        
+        function generateFullscreenBinary() {
+            const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+            const viewportHeight = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+            
+            const charWidth = 8; // przybliżona szerokość znaku w pikselach
+            const charHeight = 16; // przybliżona wysokość znaku w pikselach
+            
+            const cols = Math.ceil(viewportWidth / charWidth) + 2;
+            const rows = Math.ceil(viewportHeight / charHeight) + 2;
+            
+            let binaryText = '';
+            
+            for (let i = 0; i < rows; i++) {
+                let line = '';
+                for (let j = 0; j < cols; j++) {
+                    line += Math.random() > 0.5 ? '1' : '0';
+                }
+                binaryText += line + '\n';
+            }
+            
+            bgElement.textContent = binaryText;
+            
+            // Ustawienie rozmiaru czcionki aby dokładnie wypełnić ekran
+            bgElement.style.fontSize = `${charHeight}px`;
+        }
+        
+        // Inicjalizacja i obsługa zmiany rozmiaru
+        generateFullscreenBinary();
+        
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(generateFullscreenBinary, 100);
+        });
+    </script>
+</body>
+</html>
