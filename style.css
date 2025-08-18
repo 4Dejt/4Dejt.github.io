@@ -82,7 +82,7 @@ nav {
 
 .nav-links li a:hover {
   color: var(--accent-color);
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .nav-links li a.active-page {
