@@ -89,43 +89,6 @@
       menuToggle.classList.toggle('active');
       document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
     });
-
-    // Obsługa banera cookies
-    document.addEventListener('DOMContentLoaded', () => {
-      const cookieBanner = document.getElementById('cookie-banner');
-      const acceptBtn = document.getElementById('accept-cookies');
-
-      if (!cookieBanner || !acceptBtn) {
-        console.warn('Brak elementów cookie-banner lub accept-cookies');
-        return;
-      }
-
-      const isCookiesAccepted = () => {
-        try {
-          return localStorage.getItem('cookies-accepted') === 'true';
-        } catch (e) {
-          console.warn('Błąd dostępu do localStorage:', e);
-          return false;
-        }
-      };
-
-      if (!isCookiesAccepted()) {
-        cookieBanner.style.display = 'flex';
-        console.log('Baner cookies wyświetlony');
-      } else {
-        console.log('Baner cookies ukryty - cookies już zaakceptowane');
-      }
-
-      acceptBtn.addEventListener('click', () => {
-        try {
-          cookieBanner.style.display = 'none';
-          localStorage.setItem('cookies-accepted', 'true');
-          console.log('Cookies zaakceptowane i zapisane w localStorage');
-        } catch (e) {
-          console.warn('Błąd zapisu do localStorage:', e);
-        }
-      });
-    });
   </script>
 </body>
 </html>
