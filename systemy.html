@@ -58,7 +58,7 @@
           <div class="systems-list">
             <!-- PC-Market -->
             <div class="system-card">
-              <img src="images/PC-Market-system.png" alt="PC-Market" class="system-img">
+              <a href="https://www.insoft.com.pl/pc-market"><img src="images/PC-Market-system.png" alt="PC-Market" class="system-img"></a>
               <div class="system-info">
                 <h3>PC-Market</h3>
                 <p>Kompleksowy system dla marketów i supermarketów z pełną obsługą sprzedaży, zarządzaniem promocjami i kartami lojalnościowymi. Integruje się z wagami, drukarkami etykiet i terminalami płatniczymi.</p>
@@ -67,7 +67,7 @@
             
             <!-- PC-POS -->
             <div class="system-card">
-              <img src="images/PC-POS.png" alt="PC-POS" class="system-img">
+              <a href="https://www.insoft.com.pl/pc-pos"><img src="images/PC-POS.png" alt="PC-POS" class="system-img"></a>
               <div class="system-info">
                 <h3>PC-POS</h3>
                 <p>Zaawansowany system POS dla sklepów specjalistycznych z obsługą wielu stanowisk kasowych, zarządzaniem dostawami i automatycznym generowaniem zamówień.</p>
@@ -76,7 +76,7 @@
             
             <!-- PC-Gastronom -->
             <div class="system-card">
-              <img src="images/PC-Gastronom.png" alt="PC-Gastronom" class="system-img">
+              <a href="https://www.insoft.com.pl/gastronomia"><img src="images/PC-Gastronom.png" alt="PC-Gastronom" class="system-img"></a>
               <div class="system-info">
                 <h3>PC-Gastronom</h3>
                 <p>Specjalistyczne rozwiązanie dla gastronomii z obsługą rezerwacji, zarządzaniem stanami magazynowymi, recepturami i integracją z systemami płatniczymi.</p>
@@ -85,7 +85,7 @@
             
             <!-- Mini-Market -->
             <div class="system-card">
-              <img src="images/Mini-Market.png" alt="Mini-Market" class="system-img">
+              <a href="https://www.insoft.com.pl/mini-market"><img src="images/Mini-Market.png" alt="Mini-Market" class="system-img"></a>
               <div class="system-info">
                 <h3>Mini-Market</h3>
                 <p>Optymalne rozwiązanie dla małych sklepów spożywczych z intuicyjną obsługą, podstawowymi funkcjami magazynowymi i wsparciem dla drukarek fiskalnych.</p>
@@ -94,7 +94,7 @@
             
             <!-- PC-Petrol -->
             <div class="system-card">
-              <img src="images/PC-Petrol.png" alt="PC-Petrol" class="system-img">
+              <a href="https://www.insoft.com.pl/pc-petrol"><img src="images/PC-Petrol.png" alt="PC-Petrol" class="system-img"></a>
               <div class="system-info">
                 <h3>PC-Petrol</h3>
                 <p>System dedykowany stacjom paliw z obsługą dystrybutorów, kart paliwowych, myjni i sklepów stacyjnych. Pełna integracja z systemami monitoringu sprzedaży.</p>
@@ -103,7 +103,7 @@
             
             <!-- Konsola Kupca -->
             <div class="system-card">
-              <img src="images/Konsola Kupca.png" alt="Konsola Kupca" class="system-img">
+              <a href="https://www.insoft.com.pl/konsola-kupca"><img src="images/Konsola Kupca.png" alt="Konsola Kupca" class="system-img"></a>
               <div class="system-info">
                 <h3>Konsola Kupca</h3>
                 <p>Podstawowe stanowisko kasowe dla małych punktów handlowych i usługowych. Prosta obsługa, drukowanie paragonów i podstawowe raporty sprzedażowe.</p>
@@ -156,40 +156,6 @@
       menuToggle.classList.toggle('active');
       document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
     });
-
-    // Modal do powiększania zdjęć
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const captionText = document.getElementById("caption");
-    const closeBtn = document.getElementsByClassName("close")[0];
-    const systemImages = document.querySelectorAll('.system-img');
-
-    if (modal && modalImg && captionText && closeBtn && systemImages) {
-      systemImages.forEach(img => {
-        img.addEventListener('click', function() {
-          modal.style.display = "block";
-          modalImg.src = this.src;
-          captionText.innerHTML = this.alt;
-        });
-      });
-
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = "none";
-      });
-
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-
-      document.addEventListener('keydown', function(e) {
-        if (e.key === "Escape" && modal.style.display === "block") {
-          modal.style.display = "none";
-        }
-      });
-    }
-
   </script>
 </body>
 </html>
