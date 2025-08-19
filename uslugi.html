@@ -57,11 +57,6 @@
     </section>
   </main>
 
-  <div id="cookie-banner" class="cookie-banner">
-    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
-    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
-  </div>
-
   <footer>
     <div class="container">
       <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
@@ -69,71 +64,18 @@
   </footer>
 
   <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      
+
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
-          document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+          document.body.classList.toggle('no-scroll');
         });
       }
     });
-    // Menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-    }
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
-    });
-
-    // Obsługa banera cookies
-    document.addEventListener('DOMContentLoaded', () => {
-      const cookieBanner = document.getElementById('cookie-banner');
-      const acceptBtn = document.getElementById('accept-cookies');
-
-      if (!cookieBanner || !acceptBtn) {
-        console.warn('Brak elementów cookie-banner lub accept-cookies');
-        return;
-      }
-
-      const isCookiesAccepted = () => {
-        try {
-          return localStorage.getItem('cookies-accepted') === 'true';
-        } catch (e) {
-          console.warn('Błąd dostępu do localStorage:', e);
-          return false;
-        }
-      };
-
-      if (!isCookiesAccepted()) {
-        cookieBanner.style.display = 'flex';
-        console.log('Baner cookies wyświetlony');
-      } else {
-        console.log('Baner cookies ukryty - cookies już zaakceptowane');
-      }
-
-      acceptBtn.addEventListener('click', () => {
-        try {
-          cookieBanner.style.display = 'none';
-          localStorage.setItem('cookies-accepted', 'true');
-          console.log('Cookies zaakceptowane i zapisane w localStorage');
-        } catch (e) {
-          console.warn('Błąd zapisu do localStorage:', e);
-        }
-      });
-    });
-  </script>
+</script>
 </body>
 </html>
