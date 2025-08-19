@@ -43,16 +43,16 @@
     <section class="partners">
       <div class="container">
         <div class="partner-grid">
-          <img src="images/microsoft.png" alt="Microsoft">
-          <img src="images/dell.png" alt="Dell">
-          <img src="images/draytek.png" alt="Draytek">
-          <img src="images/digi.png" alt="Digi">
-          <img src="images/yakudo.png" alt="Yakudo">
-          <img src="images/comarch.png" alt="Comarch">
-          <img src="images/INSOFT-logo.png" alt="Insoft">
-          <img src="images/eset.png" alt="Eset">
-          <img src="images/hp.png" alt="hp">
-          <img src="images/Lenovo.png" alt="Lenovo">
+          <a href="https://www.microsoft.com/pl-pl"><img src="images/microsoft.png" alt="Microsoft"></a>
+          <a href="https://www.dell.com/pl-pl"><img src="images/dell.png" alt="Dell"></a>
+          <a href="https://draytek.pl/"><img src="images/draytek.png" alt="Draytek"></a>
+          <a href="https://www.digi.com/"><img src="images/digi.png" alt="Digi"></a>
+          <a href="https://yakudo.eu/"><img src="images/yakudo.png" alt="Yakudo"></a>
+          <a href="https://www.comarch.pl/"><img src="images/comarch.png" alt="Comarch"></a>
+          <a href="https://www.insoft.com.pl/"><img src="images/INSOFT-logo.png" alt="Insoft"></a>
+          <a href="https://www.eset.com/pl/"><img src="images/eset.png" alt="Eset"></a>
+          <a href="https://www.hp.com/pl-pl/home.html"><img src="images/hp.png" alt="hp"></a>
+          <a href="https://www.lenovo.com/pl/pl/?Redirect=False"><img src="images/Lenovo.png" alt="Lenovo"></a>
         </div>
       </div>
     </section>
@@ -64,40 +64,19 @@
     </div>
   </footer>
 
-  <div id="cookie-banner" class="cookie-banner">
-    <p>🍪 Ta strona używa cookies, aby poprawić Twoje doświadczenie. <a href="/polityka-prywatnosci.html">Więcej</a></p>
-    <button id="accept-cookies" class="cookie-btn">Akceptuję</button>
-  </div>
-
   <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
       const menuToggle = document.querySelector('.menu-toggle');
       const navLinks = document.querySelector('.nav-links');
-      
+
       if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
           navLinks.classList.toggle('active');
           menuToggle.classList.toggle('active');
-          document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+          document.body.classList.toggle('no-scroll');
         });
       }
     });
-    // Menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-      });
-    }
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      document.body.classList.toggle('no-scroll'); // Dodaj tę klasę do CSS
-    });
-  </script>
+</script>
 </body>
 </html>
