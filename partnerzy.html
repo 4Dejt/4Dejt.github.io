@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Partnerzy EMTEK S.C. – poznaj firmy, z którymi współpracujemy." />
+  <title>Partnerzy – EMTEK s.c.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/EMTEK-favicon.png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html"><img src="images/logo.png" alt="EMTEK logo" class="logo" /></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="systemy.html">Systemy</a></li>
+          <li><a href="wsparcie.html">Wsparcie</a></li>
+          <li><a href="uslugi.html">Usługi</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="partnerzy.html" class="active-page">Partnerzy</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>🤝 Partnerzy</h1>
+        <p>Współpracujemy z najlepszymi, aby dostarczać niezawodne rozwiązania.</p>
+      </div>
+    </section>
+
+    <section class="partners">
+      <div class="container">
+        <div class="partner-grid">
+          <a href="https://www.microsoft.com/pl-pl"><img src="images/microsoft.png" alt="Microsoft"></a>
+          <a href="https://www.dell.com/pl-pl"><img src="images/dell.png" alt="Dell"></a>
+          <a href="https://draytek.pl/"><img src="images/draytek.png" alt="Draytek"></a>
+          <a href="https://www.digi.com/"><img src="images/digi.png" alt="Digi"></a>
+          <a href="https://yakudo.eu/"><img src="images/yakudo.png" alt="Yakudo"></a>
+          <a href="https://www.comarch.pl/"><img src="images/comarch.png" alt="Comarch"></a>
+          <a href="https://www.insoft.com.pl/"><img src="images/INSOFT-logo.png" alt="Insoft"></a>
+          <a href="https://www.eset.com/pl/"><img src="images/eset.png" alt="Eset"></a>
+          <a href="https://www.hp.com/pl-pl/home.html"><img src="images/hp.png" alt="hp"></a>
+          <a href="https://www.lenovo.com/pl/pl/?Redirect=False"><img src="images/Lenovo.png" alt="Lenovo"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 EMTEK s.c. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          document.body.classList.toggle('no-scroll');
+        });
+      }
+    });
+</script>
+</body>
+</html>
